@@ -1,9 +1,10 @@
-package ru.nsu.kurumun.Task_1_1_1;
-
-import org.junit.jupiter.api.Test;
+package ru.nsu.kurumun.task_1_1_1;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
 class SortTest {
 
     @Test

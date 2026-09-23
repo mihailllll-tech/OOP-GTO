@@ -50,7 +50,7 @@ loadScripts(document, 'script');</script>
 <h1 title="All Classes and Interfaces" class="title">All Classes and Interfaces</h1>
 </div>
 <div id="all-classes-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-classes-table-tab0" role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="all-classes-table-tab2" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab2', 2)" class="table-tab">Classes</button><button id="all-classes-table-tab3" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab3', 2)" class="table-tab">Enum Classes</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="all-classes-table-tab0" role="tab" aria-selected="true" aria-controls="all-classes-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table', 2)" class="active-table-tab">All Classes and Interfaces</button><button id="all-classes-table-tab1" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab1', 2)" class="table-tab">Interfaces</button><button id="all-classes-table-tab2" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab2', 2)" class="table-tab">Classes</button><button id="all-classes-table-tab3" role="tab" aria-selected="false" aria-controls="all-classes-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('all-classes-table', 'all-classes-table-tab3', 2)" class="table-tab">Enum Classes</button></div>
 <div id="all-classes-table.tabpanel" role="tabpanel" aria-labelledby="all-classes-table-tab0">
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Class</div>
@@ -65,7 +65,7 @@ loadScripts(document, 'script');</script>
 </div>
 <div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></div>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Раздаёт карты из колоды и применяет правило добора дилера.</div>
+<div class="block">Хранит руку дилера, раздаёт карты и применяет правило добора.</div>
 </div>
 <div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/kurumun/blackjack/model/Deck.html" title="class in ru.nsu.kurumun.blackjack.model">Deck</a></div>
 <div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
@@ -83,24 +83,28 @@ loadScripts(document, 'script');</script>
 <div class="col-last even-row-color all-classes-table all-classes-table-tab2">
 <div class="block">Точка входа.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="ru/nsu/kurumun/blackjack/model/Rank.html" title="enum class in ru.nsu.kurumun.blackjack.model">Rank</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/kurumun/blackjack/game/Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Игрок хранит свои карты и получает карты от дилера.</div>
+</div>
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="ru/nsu/kurumun/blackjack/model/Rank.html" title="enum class in ru.nsu.kurumun.blackjack.model">Rank</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">Достоинства карт с русскими названиями и исходными значениями очков.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/kurumun/blackjack/game/Round.html" title="class in ru.nsu.kurumun.blackjack.game">Round</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
-<div class="block">Хранит руки, контролирует очерёдность ходов и определяет исход одного раунда.</div>
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/kurumun/blackjack/game/Round.html" title="class in ru.nsu.kurumun.blackjack.game">Round</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab2">
+<div class="block">Управляет участниками и очерёдностью ходов и результатом одного раунда.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="ru/nsu/kurumun/blackjack/game/RoundState.html" title="enum class in ru.nsu.kurumun.blackjack.game">RoundState</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="ru/nsu/kurumun/blackjack/game/RoundState.html" title="enum class in ru.nsu.kurumun.blackjack.game">RoundState</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">Фаза раунда либо его окончательный исход.</div>
 </div>
-<div class="col-first even-row-color all-classes-table all-classes-table-tab2"><a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a></div>
-<div class="col-last even-row-color all-classes-table all-classes-table-tab2">
+<div class="col-first odd-row-color all-classes-table all-classes-table-tab1"><a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a></div>
+<div class="col-last odd-row-color all-classes-table all-classes-table-tab1">
 <div class="block">Числовые правила консольного блэкджека.</div>
 </div>
-<div class="col-first odd-row-color all-classes-table all-classes-table-tab3"><a href="ru/nsu/kurumun/blackjack/model/Suit.html" title="enum class in ru.nsu.kurumun.blackjack.model">Suit</a></div>
-<div class="col-last odd-row-color all-classes-table all-classes-table-tab3">
+<div class="col-first even-row-color all-classes-table all-classes-table-tab3"><a href="ru/nsu/kurumun/blackjack/model/Suit.html" title="enum class in ru.nsu.kurumun.blackjack.model">Suit</a></div>
+<div class="col-last even-row-color all-classes-table all-classes-table-tab3">
 <div class="block">Масти стандартной колоды с названиями.</div>
 </div>
 </div>

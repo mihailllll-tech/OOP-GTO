@@ -91,7 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">Dealer</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Раздаёт карты из колоды и применяет правило добора дилера.</div>
+<div class="block">Хранит руку дилера, раздаёт карты и применяет правило добора.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -105,7 +105,7 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(ru.nsu.kurumun.blackjack.model.Deck)" class="member-name-link">Dealer</a><wbr>(<a href="../model/Deck.html" title="class in ru.nsu.kurumun.blackjack.model">Deck</a>&nbsp;deck)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Создаёт дилера с колодой текущего раунда.</div>
+<div class="block">Создаёт дилера с колодой.</div>
 </div>
 </div>
 </section>
@@ -122,20 +122,44 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dealInitial(ru.nsu.kurumun.blackjack.model.Hand,ru.nsu.kurumun.blackjack.model.Hand)" class="member-name-link">dealInitial</a><wbr>(<a href="../model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a>&nbsp;player,
- <a href="../model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a>&nbsp;dealerHand)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dealInitial(ru.nsu.kurumun.blackjack.game.Player)" class="member-name-link">dealInitial</a><wbr>(<a href="Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a>&nbsp;player)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Поочерёдно раздаёт игроку и дилеру по две карты.</div>
+<div class="block">Поочерёдно раздаёт начальные карты игроку и себе.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/Card.html" title="class in ru.nsu.kurumun.blackjack.model">Card</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dealTo(ru.nsu.kurumun.blackjack.model.Hand)" class="member-name-link">dealTo</a><wbr>(<a href="../model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a>&nbsp;hand)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#dealTo(ru.nsu.kurumun.blackjack.game.Player)" class="member-name-link">dealTo</a><wbr>(<a href="Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a>&nbsp;player)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Выдаёт очередную карту указанной руке.</div>
+<div class="block">Выдаёт очередную карту игроку.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../model/Card.html" title="class in ru.nsu.kurumun.blackjack.model">Card</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#drawCard()" class="member-name-link">drawCard</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Берёт карту в собственную руку.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="../model/Card.html" title="class in ru.nsu.kurumun.blackjack.model">Card</a>&gt;</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCards()" class="member-name-link">getCards</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Возвращает неизменяемый список карт дилера.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getScore()" class="member-name-link">getScore</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Возвращает сумму очков дилера.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBlackjack()" class="member-name-link">isBlackjack</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Наличие блэкджека.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#needsCard(ru.nsu.kurumun.blackjack.model.Hand)" class="member-name-link">needsCard</a><wbr>(<a href="../model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a>&nbsp;hand)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBust()" class="member-name-link">isBust</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Проверяет необходимость добора дилером, включая руки с тузом.</div>
+<div class="block">Наличие перебора.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#needsCard()" class="member-name-link">needsCard</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Проверяет необходимость добора дилером.</div>
 </div>
 </div>
 </div>
@@ -158,7 +182,7 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="&lt;init&gt;(ru.nsu.kurumun.blackjack.model.Deck)">
 <h3>Dealer</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Dealer</span><wbr><span class="parameters">(<a href="../model/Deck.html" title="class in ru.nsu.kurumun.blackjack.model">Deck</a>&nbsp;deck)</span></div>
-<div class="block">Создаёт дилера с колодой текущего раунда.</div>
+<div class="block">Создаёт дилера с колодой.</div>
 </section>
 </li>
 </ul>
@@ -170,25 +194,59 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="dealInitial(ru.nsu.kurumun.blackjack.model.Hand,ru.nsu.kurumun.blackjack.model.Hand)">
+<section class="detail" id="dealInitial(ru.nsu.kurumun.blackjack.game.Player)">
 <h3>dealInitial</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dealInitial</span><wbr><span class="parameters">(<a href="../model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a>&nbsp;player,
- <a href="../model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a>&nbsp;dealerHand)</span></div>
-<div class="block">Поочерёдно раздаёт игроку и дилеру по две карты.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">dealInitial</span><wbr><span class="parameters">(<a href="Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a>&nbsp;player)</span></div>
+<div class="block">Поочерёдно раздаёт начальные карты игроку и себе.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="dealTo(ru.nsu.kurumun.blackjack.model.Hand)">
+<section class="detail" id="dealTo(ru.nsu.kurumun.blackjack.game.Player)">
 <h3>dealTo</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../model/Card.html" title="class in ru.nsu.kurumun.blackjack.model">Card</a></span>&nbsp;<span class="element-name">dealTo</span><wbr><span class="parameters">(<a href="../model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a>&nbsp;hand)</span></div>
-<div class="block">Выдаёт очередную карту указанной руке.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../model/Card.html" title="class in ru.nsu.kurumun.blackjack.model">Card</a></span>&nbsp;<span class="element-name">dealTo</span><wbr><span class="parameters">(<a href="Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a>&nbsp;player)</span></div>
+<div class="block">Выдаёт очередную карту игроку.</div>
 </section>
 </li>
 <li>
-<section class="detail" id="needsCard(ru.nsu.kurumun.blackjack.model.Hand)">
+<section class="detail" id="drawCard()">
+<h3>drawCard</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../model/Card.html" title="class in ru.nsu.kurumun.blackjack.model">Card</a></span>&nbsp;<span class="element-name">drawCard</span>()</div>
+<div class="block">Берёт карту в собственную руку.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="needsCard()">
 <h3>needsCard</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">needsCard</span><wbr><span class="parameters">(<a href="../model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a>&nbsp;hand)</span></div>
-<div class="block">Проверяет необходимость добора дилером, включая руки с тузом.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">needsCard</span>()</div>
+<div class="block">Проверяет необходимость добора дилером.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getCards()">
+<h3>getCards</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="../model/Card.html" title="class in ru.nsu.kurumun.blackjack.model">Card</a>&gt;</span>&nbsp;<span class="element-name">getCards</span>()</div>
+<div class="block">Возвращает неизменяемый список карт дилера.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getScore()">
+<h3>getScore</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">getScore</span>()</div>
+<div class="block">Возвращает сумму очков дилера.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isBlackjack()">
+<h3>isBlackjack</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBlackjack</span>()</div>
+<div class="block">Наличие блэкджека.</div>
+</section>
+</li>
+<li>
+<section class="detail" id="isBust()">
+<h3>isBust</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBust</span>()</div>
+<div class="block">Наличие перебора.</div>
 </section>
 </li>
 </ul>

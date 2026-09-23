@@ -56,11 +56,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Туз: значение одиннадцать может быть понижено рукой до единицы.</div>
 </dd>
-<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#ACE_HIGH" class="member-name-link">ACE_HIGH</a> - Static variable in class ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#ACE_HIGH" class="member-name-link">ACE_HIGH</a> - Static variable in interface ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
 <dd>
 <div class="block">Высокое значение туза.</div>
 </dd>
-<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#ACE_LOW" class="member-name-link">ACE_LOW</a> - Static variable in class ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#ACE_LOW" class="member-name-link">ACE_LOW</a> - Static variable in interface ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
 <dd>
 <div class="block">Низкое значение туза.</div>
 </dd>
@@ -71,6 +71,10 @@ loadScripts(document, 'script');</script>
 <dt><a href="ru/nsu/kurumun/blackjack/game/Game.html#advanceDealer()" class="member-name-link">advanceDealer()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Game.html" title="class in ru.nsu.kurumun.blackjack.game">Game</a></dt>
 <dd>
 <div class="block">Выполняет один шаг дилера, чтобы консоль могла показать каждую новую карту.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Round.html#advanceDealer()" class="member-name-link">advanceDealer()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Round.html" title="class in ru.nsu.kurumun.blackjack.game">Round</a></dt>
+<dd>
+<div class="block">Выполняет один шаг хода дилера.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:C">C</h2>
@@ -100,13 +104,13 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html" class="type-name-link" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a> - Class in <a href="ru/nsu/kurumun/blackjack/game/package-summary.html">ru.nsu.kurumun.blackjack.game</a></dt>
 <dd>
-<div class="block">Раздаёт карты из колоды и применяет правило добора дилера.</div>
+<div class="block">Хранит руку дилера, раздаёт карты и применяет правило добора.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#%3Cinit%3E(ru.nsu.kurumun.blackjack.model.Deck)" class="member-name-link">Dealer(Deck)</a> - Constructor for class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
 <dd>
-<div class="block">Создаёт дилера с колодой текущего раунда.</div>
+<div class="block">Создаёт дилера с колодой.</div>
 </dd>
-<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#DEALER_STOP_SCORE" class="member-name-link">DEALER_STOP_SCORE</a> - Static variable in class ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#DEALER_STOP_SCORE" class="member-name-link">DEALER_STOP_SCORE</a> - Static variable in interface ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
 <dd>
 <div class="block">Сумма, начиная с которой дилер прекращает добор.</div>
 </dd>
@@ -118,13 +122,13 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Раунд завершён победой дилера.</div>
 </dd>
-<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#dealInitial(ru.nsu.kurumun.blackjack.model.Hand,ru.nsu.kurumun.blackjack.model.Hand)" class="member-name-link">dealInitial(Hand, Hand)</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#dealInitial(ru.nsu.kurumun.blackjack.game.Player)" class="member-name-link">dealInitial(Player)</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
 <dd>
-<div class="block">Поочерёдно раздаёт игроку и дилеру по две карты.</div>
+<div class="block">Поочерёдно раздаёт начальные карты игроку и себе.</div>
 </dd>
-<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#dealTo(ru.nsu.kurumun.blackjack.model.Hand)" class="member-name-link">dealTo(Hand)</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#dealTo(ru.nsu.kurumun.blackjack.game.Player)" class="member-name-link">dealTo(Player)</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
 <dd>
-<div class="block">Выдаёт очередную карту указанной руке.</div>
+<div class="block">Выдаёт очередную карту игроку.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/model/Deck.html" class="type-name-link" title="class in ru.nsu.kurumun.blackjack.model">Deck</a> - Class in <a href="ru/nsu/kurumun/blackjack/model/package-summary.html">ru.nsu.kurumun.blackjack.model</a></dt>
 <dd>
@@ -138,7 +142,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Создаёт и перемешивает стандартную колоду из пятидесяти двух карт.</div>
 </dd>
-<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#DECK_SIZE" class="member-name-link">DECK_SIZE</a> - Static variable in class ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#DECK_SIZE" class="member-name-link">DECK_SIZE</a> - Static variable in interface ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
 <dd>
 <div class="block">Число карт в одной стандартной колоде без джокеров.</div>
 </dd>
@@ -154,6 +158,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Раунд завершён ничьей.</div>
 </dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#drawCard()" class="member-name-link">drawCard()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
+<dd>
+<div class="block">Берёт карту в собственную руку.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:E">E</h2>
 <dl class="index">
@@ -168,7 +176,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:F">F</h2>
 <dl class="index">
-<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#FACE_VALUE" class="member-name-link">FACE_VALUE</a> - Static variable in class ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#FACE_VALUE" class="member-name-link">FACE_VALUE</a> - Static variable in interface ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
 <dd>
 <div class="block">Значение десятки, валета, дамы и короля.</div>
 </dd>
@@ -192,6 +200,14 @@ loadScripts(document, 'script');</script>
 <dt><a href="ru/nsu/kurumun/blackjack/game/Game.html#%3Cinit%3E(java.util.Random)" class="member-name-link">Game(Random)</a> - Constructor for class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Game.html" title="class in ru.nsu.kurumun.blackjack.game">Game</a></dt>
 <dd>
 <div class="block">Создаёт игру с новой перемешанной колодой для каждого раунда.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#getCards()" class="member-name-link">getCards()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
+<dd>
+<div class="block">Возвращает неизменяемый список карт дилера.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Player.html#getCards()" class="member-name-link">getCards()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a></dt>
+<dd>
+<div class="block">Возвращает неизменяемый список карт.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/model/Hand.html#getCards()" class="member-name-link">getCards()</a> - Method in class ru.nsu.kurumun.blackjack.model.<a href="ru/nsu/kurumun/blackjack/model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a></dt>
 <dd>
@@ -233,9 +249,13 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Возвращает текущий раунд для чтения состояния и открытых карт.</div>
 </dd>
-<dt><a href="ru/nsu/kurumun/blackjack/game/Game.html#getRoundNumber()" class="member-name-link">getRoundNumber()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Game.html" title="class in ru.nsu.kurumun.blackjack.game">Game</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#getScore()" class="member-name-link">getScore()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
 <dd>
-<div class="block">Возвращает количество начатых раундов.</div>
+<div class="block">Возвращает сумму очков дилера.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Player.html#getScore()" class="member-name-link">getScore()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a></dt>
+<dd>
+<div class="block">Возвращает сумму очков.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/model/Hand.html#getScore()" class="member-name-link">getScore()</a> - Method in class ru.nsu.kurumun.blackjack.model.<a href="ru/nsu/kurumun/blackjack/model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a></dt>
 <dd>
@@ -276,16 +296,36 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Выдаёт игроку карту и учитывает возможный перебор.</div>
 </dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Round.html#hit()" class="member-name-link">hit()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Round.html" title="class in ru.nsu.kurumun.blackjack.game">Round</a></dt>
+<dd>
+<div class="block">Выдаёт игроку карту и проверяет перебор.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
-<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#INITIAL_HAND_SIZE" class="member-name-link">INITIAL_HAND_SIZE</a> - Static variable in class ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#INITIAL_HAND_SIZE" class="member-name-link">INITIAL_HAND_SIZE</a> - Static variable in interface ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
 <dd>
 <div class="block">Число карт у каждого участника после начальной раздачи.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#isBlackjack()" class="member-name-link">isBlackjack()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
+<dd>
+<div class="block">Наличие блэкджека.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Player.html#isBlackjack()" class="member-name-link">isBlackjack()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a></dt>
+<dd>
+<div class="block">Наличие блэкджека.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/model/Hand.html#isBlackjack()" class="member-name-link">isBlackjack()</a> - Method in class ru.nsu.kurumun.blackjack.model.<a href="ru/nsu/kurumun/blackjack/model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a></dt>
 <dd>
 <div class="block">Проверяет наличие двадцати одного очка ровно из двух карт.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#isBust()" class="member-name-link">isBust()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
+<dd>
+<div class="block">Наличие перебора.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Player.html#isBust()" class="member-name-link">isBust()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a></dt>
+<dd>
+<div class="block">Наличие перебора.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/model/Hand.html#isBust()" class="member-name-link">isBust()</a> - Method in class ru.nsu.kurumun.blackjack.model.<a href="ru/nsu/kurumun/blackjack/model/Hand.html" title="class in ru.nsu.kurumun.blackjack.model">Hand</a></dt>
 <dd>
@@ -323,9 +363,9 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:N">N</h2>
 <dl class="index">
-<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#needsCard(ru.nsu.kurumun.blackjack.model.Hand)" class="member-name-link">needsCard(Hand)</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Dealer.html#needsCard()" class="member-name-link">needsCard()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Dealer.html" title="class in ru.nsu.kurumun.blackjack.game">Dealer</a></dt>
 <dd>
-<div class="block">Проверяет необходимость добора дилером, включая руки с тузом.</div>
+<div class="block">Проверяет необходимость добора дилером.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/model/Rank.html#NINE" class="member-name-link">NINE</a> - Enum constant in enum class ru.nsu.kurumun.blackjack.model.<a href="ru/nsu/kurumun/blackjack/model/Rank.html" title="enum class in ru.nsu.kurumun.blackjack.model">Rank</a></dt>
 <dd>
@@ -334,6 +374,12 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:P">P</h2>
 <dl class="index">
+<dt><a href="ru/nsu/kurumun/blackjack/game/Player.html" class="type-name-link" title="class in ru.nsu.kurumun.blackjack.game">Player</a> - Class in <a href="ru/nsu/kurumun/blackjack/game/package-summary.html">ru.nsu.kurumun.blackjack.game</a></dt>
+<dd>
+<div class="block">Игрок хранит свои карты и получает карты от дилера.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Player.html#%3Cinit%3E()" class="member-name-link">Player()</a> - Constructor for class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="ru/nsu/kurumun/blackjack/game/RoundState.html#PLAYER_TURN" class="member-name-link">PLAYER_TURN</a> - Enum constant in enum class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/RoundState.html" title="enum class in ru.nsu.kurumun.blackjack.game">RoundState</a></dt>
 <dd>
 <div class="block">Игрок выбирает добор или остановку.</div>
@@ -356,13 +402,21 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Достоинства карт с русскими названиями и исходными значениями очков.</div>
 </dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Player.html#receiveCard(ru.nsu.kurumun.blackjack.model.Card)" class="member-name-link">receiveCard(Card)</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Player.html" title="class in ru.nsu.kurumun.blackjack.game">Player</a></dt>
+<dd>
+<div class="block">Принимает выданную карту.</div>
+</dd>
 <dt><a href="ru/nsu/kurumun/blackjack/model/Deck.html#remaining()" class="member-name-link">remaining()</a> - Method in class ru.nsu.kurumun.blackjack.model.<a href="ru/nsu/kurumun/blackjack/model/Deck.html" title="class in ru.nsu.kurumun.blackjack.model">Deck</a></dt>
 <dd>
 <div class="block">Возвращает число ещё не извлечённых карт.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/game/Round.html" class="type-name-link" title="class in ru.nsu.kurumun.blackjack.game">Round</a> - Class in <a href="ru/nsu/kurumun/blackjack/game/package-summary.html">ru.nsu.kurumun.blackjack.game</a></dt>
 <dd>
-<div class="block">Хранит руки, контролирует очерёдность ходов и определяет исход одного раунда.</div>
+<div class="block">Управляет участниками и очерёдностью ходов и результатом одного раунда.</div>
+</dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Round.html#%3Cinit%3E(ru.nsu.kurumun.blackjack.model.Deck)" class="member-name-link">Round(Deck)</a> - Constructor for class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Round.html" title="class in ru.nsu.kurumun.blackjack.game">Round</a></dt>
+<dd>
+<div class="block">Создаёт раунд и выполняет начальную раздачу.</div>
 </dd>
 <dt><a href="ru/nsu/kurumun/blackjack/game/RoundState.html" class="type-name-link" title="enum class in ru.nsu.kurumun.blackjack.game">RoundState</a> - Enum Class in <a href="ru/nsu/kurumun/blackjack/game/package-summary.html">ru.nsu.kurumun.blackjack.game</a></dt>
 <dd>
@@ -378,7 +432,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="ru/nsu/kurumun/blackjack/ui/package-summary.html">ru.nsu.kurumun.blackjack.ui</a> - package ru.nsu.kurumun.blackjack.ui</dt>
 <dd>&nbsp;</dd>
-<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html" class="type-name-link" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a> - Class in <a href="ru/nsu/kurumun/blackjack/rules/package-summary.html">ru.nsu.kurumun.blackjack.rules</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html" class="type-name-link" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a> - Interface in <a href="ru/nsu/kurumun/blackjack/rules/package-summary.html">ru.nsu.kurumun.blackjack.rules</a></dt>
 <dd>
 <div class="block">Числовые правила консольного блэкджека.</div>
 </dd>
@@ -405,6 +459,10 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Передаёт ход дилеру и открывает его вторую карту.</div>
 </dd>
+<dt><a href="ru/nsu/kurumun/blackjack/game/Round.html#stand()" class="member-name-link">stand()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Round.html" title="class in ru.nsu.kurumun.blackjack.game">Round</a></dt>
+<dd>
+<div class="block">Завершает ход игрока и передаёт ход дилеру.</div>
+</dd>
 <dt><a href="ru/nsu/kurumun/blackjack/game/Game.html#startRound()" class="member-name-link">startRound()</a> - Method in class ru.nsu.kurumun.blackjack.game.<a href="ru/nsu/kurumun/blackjack/game/Game.html" title="class in ru.nsu.kurumun.blackjack.game">Game</a></dt>
 <dd>
 <div class="block">Начинает следующий раунд и учитывает возможный начальный блэкджек.</div>
@@ -416,7 +474,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:T">T</h2>
 <dl class="index">
-<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#TARGET_SCORE" class="member-name-link">TARGET_SCORE</a> - Static variable in class ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="class in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
+<dt><a href="ru/nsu/kurumun/blackjack/rules/Rules.html#TARGET_SCORE" class="member-name-link">TARGET_SCORE</a> - Static variable in interface ru.nsu.kurumun.blackjack.rules.<a href="ru/nsu/kurumun/blackjack/rules/Rules.html" title="interface in ru.nsu.kurumun.blackjack.rules">Rules</a></dt>
 <dd>
 <div class="block">Максимальная сумма очков без перебора.</div>
 </dd>

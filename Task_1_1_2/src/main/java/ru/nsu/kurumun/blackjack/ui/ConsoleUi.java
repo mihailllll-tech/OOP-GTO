@@ -1,4 +1,10 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.ui;
+
+import ru.nsu.kurumun.blackjack.game.Game;
+import ru.nsu.kurumun.blackjack.game.Round;
+import ru.nsu.kurumun.blackjack.game.RoundState;
+import ru.nsu.kurumun.blackjack.model.Card;
+import ru.nsu.kurumun.blackjack.model.Hand;
 
 import java.io.PrintStream;
 import java.util.List;

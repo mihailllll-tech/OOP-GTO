@@ -1,4 +1,7 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.game;
+
+import ru.nsu.kurumun.blackjack.model.Card;
+import ru.nsu.kurumun.blackjack.model.Deck;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -23,7 +26,7 @@ public final class Game {
         deckFactory = () -> new Deck(random);
     }
 
-    Game(Supplier<Deck> deckFactory) {
+    public Game(Supplier<Deck> deckFactory) {
         this.deckFactory = Objects.requireNonNull(deckFactory);
     }
 

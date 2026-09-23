@@ -39,6 +39,6 @@ bin/
 
 ### VS Code ###
 .vscode/
-
+README.md
 ### Mac OS ###
 .DS_Store

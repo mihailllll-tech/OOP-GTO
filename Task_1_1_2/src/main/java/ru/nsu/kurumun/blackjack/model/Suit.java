@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.model;
 
 /** Масти стандартной колоды с названиями. */
 public enum Suit {

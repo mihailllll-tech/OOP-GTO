@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.ui;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -15,6 +15,13 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 import org.junit.jupiter.api.Test;
+import ru.nsu.kurumun.blackjack.Main;
+import ru.nsu.kurumun.blackjack.game.Game;
+import ru.nsu.kurumun.blackjack.game.RoundState;
+import ru.nsu.kurumun.blackjack.model.Card;
+import ru.nsu.kurumun.blackjack.model.Deck;
+import ru.nsu.kurumun.blackjack.model.Rank;
+import ru.nsu.kurumun.blackjack.model.Suit;
 
 /** Checks user-visible transcripts and portable input handling. */
 class ConsoleUiTest {

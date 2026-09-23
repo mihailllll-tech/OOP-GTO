@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.game;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -8,6 +8,10 @@ import java.util.Arrays;
 import java.util.Queue;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.junit.jupiter.api.Test;
+import ru.nsu.kurumun.blackjack.model.Card;
+import ru.nsu.kurumun.blackjack.model.Deck;
+import ru.nsu.kurumun.blackjack.model.Rank;
+import ru.nsu.kurumun.blackjack.model.Suit;
 
 /** Проверяет счетчики сеанса и защитные механизмы между раундами. */
 class GameTest {

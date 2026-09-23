@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.game;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
+import ru.nsu.kurumun.blackjack.model.*;
 
 /** Проверяет правила посредством полных детерминированных раундов. */
 class RoundTest {

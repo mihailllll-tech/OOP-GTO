@@ -1,4 +1,6 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.model;
+
+import ru.nsu.kurumun.blackjack.rules.Rules;
 
 /** Достоинства карт с русскими названиями и исходными значениями очков. */
 public enum Rank {

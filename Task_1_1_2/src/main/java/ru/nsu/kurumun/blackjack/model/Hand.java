@@ -1,4 +1,6 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.model;
+
+import ru.nsu.kurumun.blackjack.rules.Rules;
 
 import java.util.ArrayList;
 import java.util.List;

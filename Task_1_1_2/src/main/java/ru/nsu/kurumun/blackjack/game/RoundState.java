@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.game;
 
 /** Фаза раунда либо его окончательный исход. */
 public enum RoundState {

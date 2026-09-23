@@ -1,4 +1,9 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.game;
+
+import ru.nsu.kurumun.blackjack.rules.Rules;
+import ru.nsu.kurumun.blackjack.model.Card;
+import ru.nsu.kurumun.blackjack.model.Deck;
+import ru.nsu.kurumun.blackjack.model.Hand;
 
 import java.util.Objects;
 

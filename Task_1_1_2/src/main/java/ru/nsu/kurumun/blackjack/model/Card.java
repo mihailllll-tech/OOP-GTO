@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.model;
 
 /** Неизменяемая карта, определяемая достоинством и мастью. */
 public final class Card {

@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.rules;
 
 /** Числовые правила консольного блэкджека. */
 public final class Rules {

@@ -1,4 +1,6 @@
-package ru.nsu.kurumun.blackjack;
+package ru.nsu.kurumun.blackjack.model;
+
+import ru.nsu.kurumun.blackjack.rules.Rules;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -22,7 +24,7 @@ public final class Deck {
     /**
      * Создаёт колоду с заданным порядком для воспроизводимых сценариев.
      */
-    Deck(List<Card> orderedCards) {
+    public Deck(List<Card> orderedCards) {
         cards = new ArrayDeque<>(List.copyOf(orderedCards));
     }
 

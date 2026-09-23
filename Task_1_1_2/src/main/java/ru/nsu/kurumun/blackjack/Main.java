@@ -1,5 +1,8 @@
 package ru.nsu.kurumun.blackjack;
 
+import ru.nsu.kurumun.blackjack.game.Game;
+import ru.nsu.kurumun.blackjack.ui.ConsoleUi;
+
 import java.util.Random;
 import java.util.Scanner;
 

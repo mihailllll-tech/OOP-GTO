@@ -1,11 +1,10 @@
 package ru.nsu.kurumun.blackjack.game;
 
+import java.util.List;
+import java.util.Optional;
 import ru.nsu.kurumun.blackjack.model.Card;
 import ru.nsu.kurumun.blackjack.model.Deck;
 import ru.nsu.kurumun.blackjack.model.Hand;
-
-import java.util.List;
-import java.util.Optional;
 
 /** Хранит руки, контролирует очерёдность ходов и определяет исход одного раунда. */
 public final class Round {

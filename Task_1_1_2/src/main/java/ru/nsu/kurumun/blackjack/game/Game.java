@@ -1,12 +1,11 @@
 package ru.nsu.kurumun.blackjack.game;
 
-import ru.nsu.kurumun.blackjack.model.Card;
-import ru.nsu.kurumun.blackjack.model.Deck;
-
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 import java.util.function.Supplier;
+import ru.nsu.kurumun.blackjack.model.Card;
+import ru.nsu.kurumun.blackjack.model.Deck;
 
 /** Управляет последовательностью раундов и общим счётом, не обращаясь к консоли. */
 public final class Game {

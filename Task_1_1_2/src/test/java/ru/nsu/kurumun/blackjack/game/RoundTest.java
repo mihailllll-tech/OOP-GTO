@@ -9,7 +9,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import org.junit.jupiter.api.Test;
-import ru.nsu.kurumun.blackjack.model.*;
+import ru.nsu.kurumun.blackjack.model.Card;
+import ru.nsu.kurumun.blackjack.model.Deck;
+import ru.nsu.kurumun.blackjack.model.Hand;
+import ru.nsu.kurumun.blackjack.model.Rank;
+import ru.nsu.kurumun.blackjack.model.Suit;
 
 /** Проверяет правила посредством полных детерминированных раундов. */
 class RoundTest {

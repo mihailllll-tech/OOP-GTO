@@ -1,17 +1,16 @@
 package ru.nsu.kurumun.blackjack.ui;
 
-import ru.nsu.kurumun.blackjack.game.Game;
-import ru.nsu.kurumun.blackjack.game.Round;
-import ru.nsu.kurumun.blackjack.game.RoundState;
-import ru.nsu.kurumun.blackjack.model.Card;
-import ru.nsu.kurumun.blackjack.model.Hand;
-
 import java.io.PrintStream;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.StringJoiner;
+import ru.nsu.kurumun.blackjack.game.Game;
+import ru.nsu.kurumun.blackjack.game.Round;
+import ru.nsu.kurumun.blackjack.game.RoundState;
+import ru.nsu.kurumun.blackjack.model.Card;
+import ru.nsu.kurumun.blackjack.model.Hand;
 
 /** Читает команды и показывает игру, правила выполняет Game. */
 public final class ConsoleUi {
@@ -59,7 +58,8 @@ public final class ConsoleUi {
             if (choice.get()) {
                 Card card = game.hit();
                 Hand hand = handOf(game.getRound().getPlayerCards());
-                output.println("You revealed a card " + formatCard(card, hand.getValues().getLast()));
+                output.println("You revealed a card "
+                        + formatCard(card, hand.getValues().getLast()));
                 showHands(game.getRound());
             } else {
                 game.stand();
@@ -146,7 +146,8 @@ public final class ConsoleUi {
             case PLAYER_WIN -> output.println("You won the round!");
             case DEALER_WIN -> output.println("Dealer won the round.");
             case DRAW -> output.println("Tie.");
-            default -> throw new IllegalStateException("Cannot display the outcome of an unfinished round.");
+            default -> throw new IllegalStateException(
+                    "Cannot display the outcome of an unfinished round.");
         }
         output.println("Score " + game.getPlayerWins() + ":" + game.getDealerWins()
             + ". Ties: " + game.getDraws());

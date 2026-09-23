@@ -29,10 +29,10 @@ class ModelTest {
     @Test
     void cardsAreValuesWithRussianNames() {
         Card card = new Card(Rank.QUEEN, Suit.SPADES);
-        Card equalCard = new Card(Rank.QUEEN, Suit.SPADES);
         assertEquals(Rank.QUEEN, card.getRank());
         assertEquals(Suit.SPADES, card.getSuit());
         assertEquals(card, card);
+        Card equalCard = new Card(Rank.QUEEN, Suit.SPADES);
         assertEquals(card, equalCard);
         assertNotEquals(card, new Card(Rank.KING, Suit.SPADES));
         assertNotEquals(card, new Card(Rank.QUEEN, Suit.HEARTS));

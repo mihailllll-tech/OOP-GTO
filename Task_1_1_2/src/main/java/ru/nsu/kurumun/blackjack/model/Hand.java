@@ -1,10 +1,9 @@
 package ru.nsu.kurumun.blackjack.model;
 
-import ru.nsu.kurumun.blackjack.rules.Rules;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import ru.nsu.kurumun.blackjack.rules.Rules;
 
 /** Карты участника и подсчёт очков с учётом изменения значения тузов. */
 public final class Hand {

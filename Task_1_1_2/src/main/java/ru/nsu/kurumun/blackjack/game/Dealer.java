@@ -1,11 +1,10 @@
 package ru.nsu.kurumun.blackjack.game;
 
-import ru.nsu.kurumun.blackjack.rules.Rules;
+import java.util.Objects;
 import ru.nsu.kurumun.blackjack.model.Card;
 import ru.nsu.kurumun.blackjack.model.Deck;
 import ru.nsu.kurumun.blackjack.model.Hand;
-
-import java.util.Objects;
+import ru.nsu.kurumun.blackjack.rules.Rules;
 
 /** Раздаёт карты из колоды и применяет правило добора дилера. */
 public final class Dealer {

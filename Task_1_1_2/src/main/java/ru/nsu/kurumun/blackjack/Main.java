@@ -1,15 +1,15 @@
 package ru.nsu.kurumun.blackjack;
 
-import ru.nsu.kurumun.blackjack.game.Game;
-import ru.nsu.kurumun.blackjack.ui.ConsoleUi;
-
 import java.util.Random;
 import java.util.Scanner;
+import ru.nsu.kurumun.blackjack.game.Game;
+import ru.nsu.kurumun.blackjack.ui.ConsoleUi;
 
 /** Точка входа. */
 public final class Main {
     private Main() {
     }
+
     /**
      * Запускает консольный блэкджек.
      */

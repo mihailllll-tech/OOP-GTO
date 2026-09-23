@@ -1,7 +1,5 @@
 package ru.nsu.kurumun.blackjack.model;
 
-import ru.nsu.kurumun.blackjack.rules.Rules;
-
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,6 +7,7 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Objects;
 import java.util.Random;
+import ru.nsu.kurumun.blackjack.rules.Rules;
 
 /** Колода, из которой карты извлекаются по одной без возвращения. */
 public final class Deck {

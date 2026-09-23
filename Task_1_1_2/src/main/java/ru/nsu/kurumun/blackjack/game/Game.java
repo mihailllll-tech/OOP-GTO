@@ -11,7 +11,6 @@ import ru.nsu.kurumun.blackjack.model.Deck;
 public final class Game {
     private final Supplier<Deck> deckFactory;
     private Round round;
-    private int roundNumber;
     private int playerWins;
     private int dealerWins;
     private int draws;
@@ -37,7 +36,6 @@ public final class Game {
             throw new IllegalStateException("Finish the current round first.");
         }
         round = new Round(deckFactory.get());
-        roundNumber++;
         resultRecorded = false;
         recordResult();
     }
@@ -85,13 +83,6 @@ public final class Game {
      */
     public Round getRound() {
         return round;
-    }
-
-    /**
-     * Возвращает количество начатых раундов.
-     */
-    public int getRoundNumber() {
-        return roundNumber;
     }
 
     /**

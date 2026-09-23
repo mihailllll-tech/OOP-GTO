@@ -26,7 +26,6 @@ class GameTest {
         game.startRound();
         assertThrows(IllegalStateException.class, game::startRound);
         assertEquals(1, decksRequested.get());
-        assertEquals(1, game.getRoundNumber());
         assertCounts(game, 0, 0, 0);
     }
 
@@ -47,7 +46,6 @@ class GameTest {
         game.startRound();
         assertCounts(game, 1, 1, 1);
         game.startRound();
-        assertEquals(4, game.getRoundNumber());
         assertCounts(game, 1, 1, 1);
         game.stand();
         assertCounts(game, 1, 1, 1);

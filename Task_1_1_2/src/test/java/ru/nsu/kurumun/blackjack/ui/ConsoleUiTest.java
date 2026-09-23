@@ -59,7 +59,9 @@ class ConsoleUiTest {
         assertTrue(lines.contains("You won the round!"));
         assertTrue(lines.contains("Score 1:0. Ties: 0"));
         assertEquals("Game over.", lines.getLast());
-        assertEquals(1, game.getRoundNumber());
+        assertEquals(List.of("Round 1"), transcript.lines()
+                .filter(line -> line.startsWith("Round "))
+                .toList());
     }
 
     @Test
@@ -113,7 +115,9 @@ class ConsoleUiTest {
         assertTrue(transcript.lines().anyMatch(line -> line.equals("Round 2")));
         assertFalse(transcript.contains("Round 3"));
         assertTrue(transcript.contains("Score 2:0. Ties: 0"));
-        assertEquals(2, game.getRoundNumber());
+        assertEquals(List.of("Round 1", "Round 2"), transcript.lines()
+                .filter(line -> line.startsWith("Round "))
+                .toList());
         assertEquals(2, game.getPlayerWins());
     }
 

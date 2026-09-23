@@ -32,10 +32,12 @@ public final class ConsoleUi {
      */
     public void run(Game game) {
         Objects.requireNonNull(game);
+        int roundNumber = 0;
         output.println("Welcome to blackjack!");
         do {
             game.startRound();
-            output.println("Round " + game.getRoundNumber());
+            roundNumber++;
+            output.println("Round " + roundNumber);
             output.println("Dealer dealt the cards");
             showHands(game.getRound());
             if (!playPlayerTurn(game)) {

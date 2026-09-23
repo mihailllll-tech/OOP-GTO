@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.kurumun.blackjack"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.kurumun.blackjack"},{"l":"ru.nsu.kurumun.blackjack.game"},{"l":"ru.nsu.kurumun.blackjack.model"},{"l":"ru.nsu.kurumun.blackjack.rules"},{"l":"ru.nsu.kurumun.blackjack.ui"}];updateSearchResults();

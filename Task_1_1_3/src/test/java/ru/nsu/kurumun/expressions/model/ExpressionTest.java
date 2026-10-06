@@ -8,6 +8,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Проверяет выражения с константами и переменными.
+ */
 class ExpressionTest {
 
     @Test

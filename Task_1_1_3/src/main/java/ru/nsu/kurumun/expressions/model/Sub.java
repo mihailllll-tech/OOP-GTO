@@ -3,12 +3,28 @@ package ru.nsu.kurumun.expressions.model;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * Разность двух выражений.
+ */
 public final class Sub extends Expression {
 
-    public Expression left;
+    /**
+     * Левый операнд.
+     */
+    private final Expression left;
 
-    public Expression right;
+    /**
+     * Правый операнд.
+     */
+    private final Expression right;
 
+    /**
+     * Создаёт выражение вычитания.
+     *
+     * @param left левый операнд
+     * @param right правый операнд
+     * @throws NullPointerException если хотя бы один операнд равен null
+     */
     public Sub(Expression left, Expression right) {
         this.left = Objects.requireNonNull(left);
         this.right = Objects.requireNonNull(right);

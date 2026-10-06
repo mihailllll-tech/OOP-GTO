@@ -3,12 +3,28 @@ package ru.nsu.kurumun.expressions.model;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * Сумма двух выражений.
+ */
 public final class Add extends Expression {
 
-    public Expression left;
+    /**
+     * Левый операнд.
+     */
+    private final Expression left;
 
-    public Expression right;
+    /**
+     * Правый операнд.
+     */
+    private final Expression right;
 
+    /**
+     * Создаёт выражение сложения.
+     *
+     * @param left левый операнд
+     * @param right правый операнд
+     * @throws NullPointerException если хотя бы один операнд равен null
+     */
     public Add(Expression left, Expression right) {
         this.left = Objects.requireNonNull(left);
         this.right = Objects.requireNonNull(right);

@@ -12,11 +12,19 @@ import ru.nsu.kurumun.expressions.io.ExpressionIo;
 import ru.nsu.kurumun.expressions.model.Expression;
 import ru.nsu.kurumun.expressions.parser.ExpressionParser;
 
+/**
+ * Приложение для работы с математическими выражениями.
+ */
 public final class Main {
 
     private Main() {
     }
 
+    /**
+     * Читает выражение, вычисляет его значение и выводит производную.
+     *
+     * @param args необязательные пути к входному файлу и файлу для записи производной
+     */
     public static void main(String[] args) {
         List<String> arguments = new ArrayList<>(Arrays.asList(args));
 

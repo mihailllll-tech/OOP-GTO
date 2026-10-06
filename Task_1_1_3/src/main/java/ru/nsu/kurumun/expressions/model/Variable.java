@@ -2,10 +2,19 @@ package ru.nsu.kurumun.expressions.model;
 
 import java.util.Map;
 
+/**
+ * Выражение, представляющее именованную переменную.
+ */
 public final class Variable extends Expression {
 
     private final String name;
 
+    /**
+     * Создаёт выражение-переменную.
+     *
+     * @param name имя переменной
+     * @throws IllegalArgumentException если имя равно null, пусто или состоит из пробелов
+     */
     public Variable(String name) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Variable name must not be blank");
@@ -15,15 +24,7 @@ public final class Variable extends Expression {
 
     @Override
     public int eval(Map<String, Integer> variables) {
-        Integer value = null;
-
-        for (Map.Entry<String, Integer> entry : variables.entrySet()) {
-            if (name.equals(entry.getKey())) {
-                value = entry.getValue();
-                break;
-            }
-        }
-
+        Integer value = variables.get(name);
         if (value == null) {
             throw new IllegalArgumentException("No value for variable: " + name);
         }

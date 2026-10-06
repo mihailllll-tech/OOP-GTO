@@ -6,6 +6,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 import ru.nsu.kurumun.expressions.model.Expression;
 
+/**
+ * Проверяет разбор строк с выражениями.
+ */
 class ExpressionParserTest {
 
     @Test

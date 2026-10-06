@@ -7,11 +7,24 @@ import ru.nsu.kurumun.expressions.model.Mul;
 import ru.nsu.kurumun.expressions.model.Number;
 import ru.nsu.kurumun.expressions.model.Sub;
 import ru.nsu.kurumun.expressions.model.Variable;
+
+/**
+ * Разбирает строковое представление выражений.
+ */
 public final class ExpressionParser {
+
+    private static final int OPERATOR_NOT_FOUND = -1;
 
     private ExpressionParser() {
     }
 
+    /**
+     * Разбирает математическое выражение.
+     *
+     * @param input строка с выражением
+     * @return выражение, полученное при разборе строки
+     * @throws IllegalArgumentException если строка равна null или содержит неверное выражение
+     */
     public static Expression parse(String input) {
         if (input == null || input.isBlank()) {
             throw new IllegalArgumentException("Expression must not be blank");
@@ -44,16 +57,31 @@ public final class ExpressionParser {
 
         return true;
     }
+
     private static Expression parseOperation(String text) {
         if (!text.endsWith(")")) {
             throw new IllegalArgumentException("Missing closing parenthesis: " + text);
         }
 
         String content = text.substring(1, text.length() - 1).trim();
+        int operatorIndex = findOperatorIndex(content);
+        if (operatorIndex == OPERATOR_NOT_FOUND) {
+            return parse(content);
+        }
+
+        Expression left = parse(content.substring(0, operatorIndex));
+        Expression right = parse(content.substring(operatorIndex + 1));
+        return createOperation(content.charAt(operatorIndex), left, right);
+    }
+
+    /**
+     * Находит первый бинарный оператор вне вложенных скобок.
+     */
+    private static int findOperatorIndex(String text) {
         int depth = 0;
 
-        for (int i = 0; i < content.length(); i++) {
-            char symbol = content.charAt(i);
+        for (int i = 0; i < text.length(); i++) {
+            char symbol = text.charAt(i);
 
             if (symbol == '(') {
                 depth++;
@@ -63,16 +91,7 @@ public final class ExpressionParser {
                     throw new IllegalArgumentException("Unbalanced parentheses: " + text);
                 }
             } else if (depth == 0 && i > 0 && isOperator(symbol)) {
-                Expression left = parse(content.substring(0, i));
-                Expression right = parse(content.substring(i + 1));
-
-                return switch (symbol) {
-                    case '+' -> new Add(left, right);
-                    case '-' -> new Sub(left, right);
-                    case '*' -> new Mul(left, right);
-                    case '/' -> new Div(left, right);
-                    default -> throw new IllegalArgumentException("Unknown operator: " + symbol);
-                };
+                return i;
             }
         }
 
@@ -80,7 +99,20 @@ public final class ExpressionParser {
             throw new IllegalArgumentException("Unbalanced parentheses: " + text);
         }
 
-        return parse(content);
+        return OPERATOR_NOT_FOUND;
+    }
+
+    /**
+     * Создаёт выражение для указанного оператора и двух операндов.
+     */
+    private static Expression createOperation(char operator, Expression left, Expression right) {
+        return switch (operator) {
+            case '+' -> new Add(left, right);
+            case '-' -> new Sub(left, right);
+            case '*' -> new Mul(left, right);
+            case '/' -> new Div(left, right);
+            default -> throw new IllegalArgumentException("Unknown operator: " + operator);
+        };
     }
 
     private static boolean isOperator(char symbol) {

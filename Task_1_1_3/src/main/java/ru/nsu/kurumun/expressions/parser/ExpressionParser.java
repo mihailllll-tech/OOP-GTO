@@ -1,11 +1,7 @@
 package ru.nsu.kurumun.expressions.parser;
 
-import ru.nsu.kurumun.expressions.model.Add;
-import ru.nsu.kurumun.expressions.model.Div;
 import ru.nsu.kurumun.expressions.model.Expression;
-import ru.nsu.kurumun.expressions.model.Mul;
 import ru.nsu.kurumun.expressions.model.Number;
-import ru.nsu.kurumun.expressions.model.Sub;
 import ru.nsu.kurumun.expressions.model.Variable;
 
 /**
@@ -105,17 +101,15 @@ public final class ExpressionParser {
     /**
      * Создаёт выражение для указанного оператора и двух операндов.
      */
-    private static Expression createOperation(char operator, Expression left, Expression right) {
-        return switch (operator) {
-            case '+' -> new Add(left, right);
-            case '-' -> new Sub(left, right);
-            case '*' -> new Mul(left, right);
-            case '/' -> new Div(left, right);
-            default -> throw new IllegalArgumentException("Unknown operator: " + operator);
-        };
+    private static Expression createOperation(char symbol, Expression left, Expression right) {
+        Operator operator = Operator.fromSymbol(symbol);
+        if (operator == null) {
+            throw new IllegalArgumentException("Unknown operator: " + symbol);
+        }
+        return operator.create(left, right);
     }
 
     private static boolean isOperator(char symbol) {
-        return symbol == '+' || symbol == '-' || symbol == '*' || symbol == '/';
+        return Operator.fromSymbol(symbol) != null;
     }
 }

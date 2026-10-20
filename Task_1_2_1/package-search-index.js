@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.kurumun.graph"},{"l":"ru.nsu.kurumun.graph.algorithm"},{"l":"ru.nsu.kurumun.graph.io"},{"l":"ru.nsu.kurumun.graph.model"}];updateSearchResults();

@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.graph;
+package ru.nsu.kurumun.graph.model;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

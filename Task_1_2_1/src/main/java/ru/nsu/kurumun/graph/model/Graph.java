@@ -1,4 +1,4 @@
-package ru.nsu.kurumun.graph;
+package ru.nsu.kurumun.graph.model;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
+import ru.nsu.kurumun.graph.io.GraphReader;
 
 public interface Graph<T> {
     void addVertex(T vertex);

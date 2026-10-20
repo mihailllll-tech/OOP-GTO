@@ -1,9 +1,14 @@
 package ru.nsu.kurumun.graph;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import ru.nsu.kurumun.graph.algorithm.TopologicalSort;
+import ru.nsu.kurumun.graph.io.GraphReader;
+import ru.nsu.kurumun.graph.model.AdjacencyListGraph;
+import ru.nsu.kurumun.graph.model.AdjacencyMatrixGraph;
+import ru.nsu.kurumun.graph.model.Graph;
+import ru.nsu.kurumun.graph.model.IncidenceMatrixGraph;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +23,7 @@ public class Main {
 
         try {
             for (Graph<String> graph : graphs) {
-                graph.readFromFile(Path.of("graph.txt"), text -> text);
+                GraphReader.readResource("/graph.txt", graph, text -> text);
                 System.out.println("Реализация: " + graph.getClass().getSimpleName());
                 System.out.print(graph);
                 System.out.println("Топологический порядок: " + TopologicalSort.sort(graph));

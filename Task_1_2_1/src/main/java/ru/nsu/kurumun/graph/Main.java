@@ -10,7 +10,21 @@ import ru.nsu.kurumun.graph.model.AdjacencyMatrixGraph;
 import ru.nsu.kurumun.graph.model.Graph;
 import ru.nsu.kurumun.graph.model.IncidenceMatrixGraph;
 
+/**
+ * Демонстрирует чтение, вывод, сортировку и сравнение трёх представлений графа.
+ */
 public class Main {
+    /**
+     * Создаёт объект демонстрационной программы.
+     */
+    public Main() {
+    }
+
+    /**
+     * Загружает ресурс {@code /graph.txt} во все реализации и выводит результаты.
+     *
+     * @param args аргументы командной строки; в демонстрации не используются
+     */
     public static void main(String[] args) {
         Graph<String> listGraph = new AdjacencyListGraph<>();
         Graph<String> adjacencyMatrixGraph = new AdjacencyMatrixGraph<>();

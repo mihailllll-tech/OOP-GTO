@@ -5,9 +5,23 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Ориентированный граф, хранящий списки исходящих соседей в карте.
+ *
+ * <p>Карта сохраняет порядок добавления вершин.
+ *
+ * @param <T> тип вершины
+ */
 public class AdjacencyListGraph<T> implements Graph<T> {
     private final Map<T, List<T>> adjacency = new LinkedHashMap<>();
 
+    /**
+     * Создаёт пустой граф.
+     */
+    public AdjacencyListGraph() {
+    }
+
+    /** {@inheritDoc} */
     @Override
     public void addVertex(T vertex) {
         if (vertex == null) {
@@ -18,6 +32,7 @@ public class AdjacencyListGraph<T> implements Graph<T> {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void removeVertex(T vertex) {
         adjacency.remove(vertex);
@@ -26,6 +41,7 @@ public class AdjacencyListGraph<T> implements Graph<T> {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void addEdge(T from, T to) {
         if (!adjacency.containsKey(from) || !adjacency.containsKey(to)) {
@@ -37,6 +53,7 @@ public class AdjacencyListGraph<T> implements Graph<T> {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void removeEdge(T from, T to) {
         if (!adjacency.containsKey(from) || !adjacency.containsKey(to)) {
@@ -45,21 +62,25 @@ public class AdjacencyListGraph<T> implements Graph<T> {
         adjacency.get(from).remove(to);
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean containsVertex(T vertex) {
         return adjacency.containsKey(vertex);
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean containsEdge(T from, T to) {
         return adjacency.containsKey(from) && adjacency.get(from).contains(to);
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<T> getVertices() {
         return new ArrayList<>(adjacency.keySet());
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<T> getNeighbors(T vertex) {
         if (!adjacency.containsKey(vertex)) {
@@ -68,6 +89,12 @@ public class AdjacencyListGraph<T> implements Graph<T> {
         return new ArrayList<>(adjacency.get(vertex));
     }
 
+    /**
+     * Сравнивает вершины и направленные рёбра с другим графом.
+     *
+     * @param object сравниваемый объект
+     * @return {@code true}, если объект является графом с той же структурой
+     */
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -79,11 +106,21 @@ public class AdjacencyListGraph<T> implements Graph<T> {
         return Graph.sameStructure(this, graph);
     }
 
+    /**
+     * Возвращает хеш-код структуры графа, согласованный с {@code equals}.
+     *
+     * @return хеш-код вершин и рёбер
+     */
     @Override
     public int hashCode() {
         return Graph.structureHashCode(this);
     }
 
+    /**
+     * Возвращает строки вида «вершина -&gt; список соседей».
+     *
+     * @return представление графа; для пустого графа — пустая строка
+     */
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();

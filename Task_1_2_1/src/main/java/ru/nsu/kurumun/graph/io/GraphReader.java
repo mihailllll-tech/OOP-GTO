@@ -13,10 +13,31 @@ import java.util.List;
 import java.util.function.Function;
 import ru.nsu.kurumun.graph.model.Graph;
 
+/**
+ * Читает графы из файлов и ресурсов в кодировке UTF-8.
+ *
+ * <p>Первая строка содержит неотрицательное число вершин. Следующие строки
+ * задают по одному непустому имени без пробелов для каждой вершины.
+ * Оставшиеся непустые строки содержат начало и конец ребра через пробельные
+ * символы. Имена преобразуются переданной функцией; вершины должны быть уникальны.
+ *
+ * <p>Чтение заменяет содержимое переданного графа. При некорректных данных
+ * после начала заполнения возможен частично заполненный граф.
+ */
 public final class GraphReader {
     private GraphReader() {
     }
 
+    /**
+     * Читает граф из внешнего файла и закрывает открытый поток.
+     *
+     * @param path путь к файлу
+     * @param graph заполняемый граф
+     * @param vertexParser преобразование имени вершины в объект
+     * @param <T> тип вершины
+     * @throws IOException если файл недоступен или произошла ошибка чтения
+     * @throws IllegalArgumentException если нарушен формат или состав вершин
+     */
     public static <T> void read(Path path, Graph<T> graph,
                                Function<String, T> vertexParser) throws IOException {
         try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
@@ -24,6 +45,16 @@ public final class GraphReader {
         }
     }
 
+    /**
+     * Читает граф из ресурса classpath и закрывает открытый поток.
+     *
+     * @param resourceName имя ресурса; начальный слеш задаёт путь от корня classpath
+     * @param graph заполняемый граф
+     * @param vertexParser преобразование имени вершины в объект
+     * @param <T> тип вершины
+     * @throws IOException если ресурс не найден или произошла ошибка чтения
+     * @throws IllegalArgumentException если нарушен формат или состав вершин
+     */
     public static <T> void readResource(String resourceName, Graph<T> graph,
                                        Function<String, T> vertexParser) throws IOException {
         InputStream stream = GraphReader.class.getResourceAsStream(resourceName);

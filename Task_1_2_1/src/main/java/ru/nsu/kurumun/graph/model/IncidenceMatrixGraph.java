@@ -3,6 +3,14 @@ package ru.nsu.kurumun.graph.model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Ориентированный граф, хранящий матрицу инцидентности.
+ *
+ * <p>Строки соответствуют вершинам, столбцы — рёбрам. Значения -1 и 1
+ * обозначают начало и конец ребра, а 2 — петлю.
+ *
+ * @param <T> тип вершины
+ */
 public class IncidenceMatrixGraph<T> implements Graph<T> {
     private static final int OUTGOING = -1;
     private static final int INCOMING = 1;
@@ -11,6 +19,13 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
     private final List<T> vertices = new ArrayList<>();
     private final List<List<Integer>> matrix = new ArrayList<>();
 
+    /**
+     * Создаёт пустой граф.
+     */
+    public IncidenceMatrixGraph() {
+    }
+
+    /** {@inheritDoc} */
     @Override
     public void addVertex(T vertex) {
         if (vertex == null) {
@@ -29,6 +44,7 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
         matrix.add(row);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void removeVertex(T vertex) {
         int index = vertices.indexOf(vertex);
@@ -47,6 +63,7 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
         matrix.remove(index);
     }
 
+    /** {@inheritDoc} */
     @Override
     public void addEdge(T from, T to) {
         int fromIndex = vertices.indexOf(from);
@@ -70,6 +87,7 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public void removeEdge(T from, T to) {
         int fromIndex = vertices.indexOf(from);
@@ -86,11 +104,13 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
         }
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean containsVertex(T vertex) {
         return vertices.contains(vertex);
     }
 
+    /** {@inheritDoc} */
     @Override
     public boolean containsEdge(T from, T to) {
         int fromIndex = vertices.indexOf(from);
@@ -99,11 +119,13 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
                 && findEdgeIndex(fromIndex, toIndex) >= 0;
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<T> getVertices() {
         return new ArrayList<>(vertices);
     }
 
+    /** {@inheritDoc} */
     @Override
     public List<T> getNeighbors(T vertex) {
         if (!vertices.contains(vertex)) {
@@ -119,6 +141,13 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
         return neighbors;
     }
 
+    /**
+     * Находит столбец направленного ребра или петли.
+     *
+     * @param fromIndex индекс начала
+     * @param toIndex индекс конца
+     * @return индекс столбца или {@code -1}, если ребра нет
+     */
     private int findEdgeIndex(int fromIndex, int toIndex) {
         for (int edge = 0; edge < matrix.get(fromIndex).size(); edge++) {
             if (fromIndex == toIndex) {
@@ -133,6 +162,12 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
         return -1;
     }
 
+    /**
+     * Сравнивает вершины и направленные рёбра с другим графом.
+     *
+     * @param object сравниваемый объект
+     * @return {@code true}, если объект является графом с той же структурой
+     */
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -144,11 +179,21 @@ public class IncidenceMatrixGraph<T> implements Graph<T> {
         return Graph.sameStructure(this, graph);
     }
 
+    /**
+     * Возвращает хеш-код структуры графа, согласованный с {@code equals}.
+     *
+     * @return хеш-код вершин и рёбер
+     */
     @Override
     public int hashCode() {
         return Graph.structureHashCode(this);
     }
 
+    /**
+     * Возвращает строки вида «вершина -&gt; список соседей».
+     *
+     * @return представление графа; для пустого графа — пустая строка
+     */
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();

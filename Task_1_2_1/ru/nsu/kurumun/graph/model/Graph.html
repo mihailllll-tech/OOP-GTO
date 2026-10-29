@@ -86,11 +86,19 @@ loadScripts(document, 'script');</script>
 </div>
 <section class="class-description" id="class-description">
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - тип вершины</dd>
+</dl>
+<dl class="notes">
 <dt>All Known Implementing Classes:</dt>
 <dd><code><a href="AdjacencyListGraph.html" title="class in ru.nsu.kurumun.graph.model">AdjacencyListGraph</a></code>, <code><a href="AdjacencyMatrixGraph.html" title="class in ru.nsu.kurumun.graph.model">AdjacencyMatrixGraph</a></code>, <code><a href="IncidenceMatrixGraph.html" title="class in ru.nsu.kurumun.graph.model">IncidenceMatrixGraph</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public interface </span><span class="element-name type-name-label">Graph&lt;T&gt;</span></div>
+<div class="block">Ориентированный граф без повторяющихся рёбер, с поддержкой петель.
+
+ <p>Вершины сравниваются через <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link"><code>Object.equals(Object)</code></a>. Их поля,
+ участвующие в равенстве и хешировании, не следует менять после добавления.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -108,41 +116,63 @@ loadScripts(document, 'script');</script>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addEdge(T,T)" class="member-name-link">addEdge</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;from,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Добавляет направленное ребро, если его ещё нет.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#addVertex(T)" class="member-name-link">addVertex</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Добавляет вершину; повторное добавление не изменяет граф.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#containsEdge(T,T)" class="member-name-link">containsEdge</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;from,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;to)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Проверяет наличие направленного ребра.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#containsVertex(T)" class="member-name-link">containsVertex</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Проверяет наличие вершины.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getNeighbors(T)" class="member-name-link">getNeighbors</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Возвращает вершины, в которые идут исходящие рёбра указанной вершины.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#getVertices()" class="member-name-link">getVertices</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Возвращает отдельный список вершин в порядке их добавления.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#readFromFile(java.nio.file.Path,java.util.function.Function)" class="member-name-link">readFromFile</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Graph.html" title="type parameter in Graph">T</a>&gt;&nbsp;vertexParser)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
+<div class="block">Заменяет содержимое графа данными из текстового файла.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeEdge(T,T)" class="member-name-link">removeEdge</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;from,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;to)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Удаляет направленное ребро; отсутствие ребра не изменяет граф.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>void</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#removeVertex(T)" class="member-name-link">removeVertex</a><wbr>(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
+<div class="block">Удаляет вершину и все связанные с ней рёбра.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1"><code>static boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1"><code><a href="#sameStructure(ru.nsu.kurumun.graph.model.Graph,ru.nsu.kurumun.graph.model.Graph)" class="member-name-link">sameStructure</a><wbr>(<a href="Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;?&gt;&nbsp;first,
  <a href="Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;?&gt;&nbsp;second)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Сравнивает вершины и направленные рёбра независимо от способа хранения.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1"><code>static int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1"><code><a href="#structureHashCode(ru.nsu.kurumun.graph.model.Graph)" class="member-name-link">structureHashCode</a><wbr>(<a href="Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;?&gt;&nbsp;graph)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1">
+<div class="block">Вычисляет хеш-код по вершинам и множествам их исходящих соседей.</div>
+</div>
 </div>
 </div>
 </div>
@@ -161,12 +191,25 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="addVertex(T)">
 <h3 id="addVertex(java.lang.Object)">addVertex</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addVertex</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</span></div>
+<div class="block">Добавляет вершину; повторное добавление не изменяет граф.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - добавляемая вершина</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - если вершина равна <code>null</code></dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="removeVertex(T)">
 <h3 id="removeVertex(java.lang.Object)">removeVertex</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeVertex</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</span></div>
+<div class="block">Удаляет вершину и все связанные с ней рёбра.
+ Отсутствие вершины не изменяет граф.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - удаляемая вершина</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -174,6 +217,15 @@ loadScripts(document, 'script');</script>
 <h3 id="addEdge(java.lang.Object,java.lang.Object)">addEdge</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">addEdge</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;from,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;to)</span></div>
+<div class="block">Добавляет направленное ребро, если его ещё нет.
+ Совпадающие начало и конец образуют петлю.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - начало ребра</dd>
+<dd><code>to</code> - конец ребра</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - если хотя бы одной вершины нет в графе</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -181,12 +233,27 @@ loadScripts(document, 'script');</script>
 <h3 id="removeEdge(java.lang.Object,java.lang.Object)">removeEdge</h3>
 <div class="member-signature"><span class="return-type">void</span>&nbsp;<span class="element-name">removeEdge</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;from,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;to)</span></div>
+<div class="block">Удаляет направленное ребро; отсутствие ребра не изменяет граф.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - начало ребра</dd>
+<dd><code>to</code> - конец ребра</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - если хотя бы одной вершины нет в графе</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="containsVertex(T)">
 <h3 id="containsVertex(java.lang.Object)">containsVertex</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">containsVertex</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</span></div>
+<div class="block">Проверяет наличие вершины.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - искомая вершина</dd>
+<dt>Returns:</dt>
+<dd><code>true</code>, если вершина присутствует</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -194,18 +261,44 @@ loadScripts(document, 'script');</script>
 <h3 id="containsEdge(java.lang.Object,java.lang.Object)">containsEdge</h3>
 <div class="member-signature"><span class="return-type">boolean</span>&nbsp;<span class="element-name">containsEdge</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;from,
  <a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;to)</span></div>
+<div class="block">Проверяет наличие направленного ребра.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>from</code> - начало ребра</dd>
+<dd><code>to</code> - конец ребра</dd>
+<dt>Returns:</dt>
+<dd><code>true</code>, если ребро существует; иначе <code>false</code>,
+         в том числе при отсутствии одной из вершин</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getVertices()">
 <h3>getVertices</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</span>&nbsp;<span class="element-name">getVertices</span>()</div>
+<div class="block">Возвращает отдельный список вершин в порядке их добавления.
+
+ <p>Список можно изменять независимо от графа; сами вершины не копируются.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>поверхностная копия списка вершин</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="getNeighbors(T)">
 <h3 id="getNeighbors(java.lang.Object)">getNeighbors</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="Graph.html" title="type parameter in Graph">T</a>&gt;</span>&nbsp;<span class="element-name">getNeighbors</span><wbr><span class="parameters">(<a href="Graph.html" title="type parameter in Graph">T</a>&nbsp;vertex)</span></div>
+<div class="block">Возвращает вершины, в которые идут исходящие рёбра указанной вершины.
+ Порядок соседей зависит от реализации.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>vertex</code> - исходная вершина</dd>
+<dt>Returns:</dt>
+<dd>отдельный список соседей; сами вершины не копируются</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - если вершины нет в графе</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -214,9 +307,17 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">readFromFile</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr><a href="Graph.html" title="type parameter in Graph">T</a>&gt;&nbsp;vertexParser)</span>
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Заменяет содержимое графа данными из текстового файла.
+
+ <p>Формат описан в <a href="../io/GraphReader.html" title="class in ru.nsu.kurumun.graph.io"><code>GraphReader</code></a>. При ошибке после начала чтения
+ граф может остаться заполненным частично.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>path</code> - путь к файлу в кодировке UTF-8</dd>
+<dd><code>vertexParser</code> - преобразование имени вершины в объект</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - если файл недоступен или произошла ошибка чтения</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - если данные имеют неверный формат</dd>
 </dl>
 </section>
 </li>
@@ -225,12 +326,28 @@ loadScripts(document, 'script');</script>
 <h3>sameStructure</h3>
 <div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">sameStructure</span><wbr><span class="parameters">(<a href="Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;?&gt;&nbsp;first,
  <a href="Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;?&gt;&nbsp;second)</span></div>
+<div class="block">Сравнивает вершины и направленные рёбра независимо от способа хранения.
+ Порядок добавления вершин и соседей не влияет на результат.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>first</code> - первый граф</dd>
+<dd><code>second</code> - второй граф</dd>
+<dt>Returns:</dt>
+<dd><code>true</code>, если вершины и рёбра совпадают</dd>
+</dl>
 </section>
 </li>
 <li>
 <section class="detail" id="structureHashCode(ru.nsu.kurumun.graph.model.Graph)">
 <h3>structureHashCode</h3>
 <div class="member-signature"><span class="modifiers">static</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">structureHashCode</span><wbr><span class="parameters">(<a href="Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;?&gt;&nbsp;graph)</span></div>
+<div class="block">Вычисляет хеш-код по вершинам и множествам их исходящих соседей.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>graph</code> - граф</dd>
+<dt>Returns:</dt>
+<dd>хеш-код, согласованный с <a href="#sameStructure(ru.nsu.kurumun.graph.model.Graph,ru.nsu.kurumun.graph.model.Graph)"><code>sameStructure(Graph, Graph)</code></a></dd>
+</dl>
 </section>
 </li>
 </ul>

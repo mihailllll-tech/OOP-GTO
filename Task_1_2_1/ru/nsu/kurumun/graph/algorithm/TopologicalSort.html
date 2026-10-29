@@ -91,6 +91,7 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">TopologicalSort</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Топологическая сортировка ориентированного графа алгоритмом Кана.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,7 +108,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a><wbr>&lt;T&gt;</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#sort(ru.nsu.kurumun.graph.model.Graph)" class="member-name-link">sort</a><wbr>(<a href="../model/Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;T&gt;&nbsp;graph)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Строит порядок, в котором начало каждого ребра предшествует его концу.</div>
+</div>
 </div>
 </div>
 </div>
@@ -129,6 +132,21 @@ loadScripts(document, 'script');</script>
 <section class="detail" id="sort(ru.nsu.kurumun.graph.model.Graph)">
 <h3>sort</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;T&gt;</span>&nbsp;<span class="element-name">sort</span><wbr><span class="parameters">(<a href="../model/Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;T&gt;&nbsp;graph)</span></div>
+<div class="block">Строит порядок, в котором начало каждого ребра предшествует его концу.
+
+ <p>Исходный граф не изменяется. При нескольких допустимых порядках
+ результат зависит от порядка вершин и соседей в реализации графа.</div>
+<dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - тип вершины</dd>
+<dt>Parameters:</dt>
+<dd><code>graph</code> - исходный граф</dd>
+<dt>Returns:</dt>
+<dd>список всех вершин в топологическом порядке</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - если граф содержит направленный цикл,
+         включая петлю</dd>
+</dl>
 </section>
 </li>
 </ul>

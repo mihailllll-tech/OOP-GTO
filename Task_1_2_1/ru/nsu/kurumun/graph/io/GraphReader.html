@@ -91,6 +91,15 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public final class </span><span class="element-name type-name-label">GraphReader</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<div class="block">Читает графы из файлов и ресурсов в кодировке UTF-8.
+
+ <p>Первая строка содержит неотрицательное число вершин. Следующие строки
+ задают по одному непустому имени без пробелов для каждой вершины.
+ Оставшиеся непустые строки содержат начало и конец ребра через пробельные
+ символы. Имена преобразуются переданной функцией; вершины должны быть уникальны.
+
+ <p>Чтение заменяет содержимое переданного графа. При некорректных данных
+ после начала заполнения возможен частично заполненный граф.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -109,12 +118,16 @@ loadScripts(document, 'script');</script>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#read(java.nio.file.Path,ru.nsu.kurumun.graph.model.Graph,java.util.function.Function)" class="member-name-link">read</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/nio/file/Path.html" title="class or interface in java.nio.file" class="external-link">Path</a>&nbsp;path,
  <a href="../model/Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;T&gt;&nbsp;graph,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>T&gt;&nbsp;vertexParser)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Читает граф из внешнего файла и закрывает открытый поток.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static &lt;T&gt;&nbsp;void</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#readResource(java.lang.String,ru.nsu.kurumun.graph.model.Graph,java.util.function.Function)" class="member-name-link">readResource</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;resourceName,
  <a href="../model/Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;T&gt;&nbsp;graph,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>T&gt;&nbsp;vertexParser)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Читает граф из ресурса classpath и закрывает открытый поток.</div>
+</div>
 </div>
 </div>
 </div>
@@ -139,9 +152,17 @@ loadScripts(document, 'script');</script>
  <a href="../model/Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;T&gt;&nbsp;graph,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>T&gt;&nbsp;vertexParser)</span>
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Читает граф из внешнего файла и закрывает открытый поток.</div>
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - тип вершины</dd>
+<dt>Parameters:</dt>
+<dd><code>path</code> - путь к файлу</dd>
+<dd><code>graph</code> - заполняемый граф</dd>
+<dd><code>vertexParser</code> - преобразование имени вершины в объект</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - если файл недоступен или произошла ошибка чтения</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - если нарушен формат или состав вершин</dd>
 </dl>
 </section>
 </li>
@@ -152,9 +173,17 @@ loadScripts(document, 'script');</script>
  <a href="../model/Graph.html" title="interface in ru.nsu.kurumun.graph.model">Graph</a>&lt;T&gt;&nbsp;graph,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/function/Function.html" title="class or interface in java.util.function" class="external-link">Function</a>&lt;<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>,<wbr>T&gt;&nbsp;vertexParser)</span>
                              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Читает граф из ресурса classpath и закрывает открытый поток.</div>
 <dl class="notes">
+<dt>Type Parameters:</dt>
+<dd><code>T</code> - тип вершины</dd>
+<dt>Parameters:</dt>
+<dd><code>resourceName</code> - имя ресурса; начальный слеш задаёт путь от корня classpath</dd>
+<dd><code>graph</code> - заполняемый граф</dd>
+<dd><code>vertexParser</code> - преобразование имени вершины в объект</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - если ресурс не найден или произошла ошибка чтения</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - если нарушен формат или состав вершин</dd>
 </dl>
 </section>
 </li>

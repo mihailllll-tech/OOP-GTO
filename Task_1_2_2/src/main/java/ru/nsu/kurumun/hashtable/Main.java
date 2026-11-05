@@ -2,8 +2,8 @@ package ru.nsu.kurumun.hashtable;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-import ru.nsu.kurumun.hashtable.model.Entry;
 import ru.nsu.kurumun.hashtable.model.HashTable;
+import ru.nsu.kurumun.hashtable.model.HashTable.Entry;
 
 public class Main {
     public static void main(String[] args) {

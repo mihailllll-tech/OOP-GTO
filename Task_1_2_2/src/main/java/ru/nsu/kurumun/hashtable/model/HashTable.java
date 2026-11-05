@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
-public final class HashTable<K, V> implements Iterable<Entry<K, V>> {
+public final class HashTable<K, V> implements Iterable<HashTable.Entry<K, V>> {
     private static final int DEFAULT_CAPACITY = 16;
     private static final int MAX_CAPACITY = 1 << 30;
 
@@ -183,6 +183,65 @@ public final class HashTable<K, V> implements Iterable<Entry<K, V>> {
             first = false;
         }
         return result.append('}').toString();
+    }
+
+    public static final class Entry<K, V> {
+        private final int hash;
+        private final K key;
+        private V value;
+        private Entry<K, V> next;
+
+        private Entry(int hash, K key, V value, Entry<K, V> next) {
+            this.hash = hash;
+            this.key = key;
+            this.value = value;
+            this.next = next;
+        }
+
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
+
+        private int getHash() {
+            return hash;
+        }
+
+        private Entry<K, V> getNext() {
+            return next;
+        }
+
+        private void setValue(V value) {
+            this.value = value;
+        }
+
+        private void setNext(Entry<K, V> next) {
+            this.next = next;
+        }
+
+        @Override
+        public boolean equals(Object object) {
+            if (this == object) {
+                return true;
+            }
+            if (!(object instanceof Entry<?, ?> entry)) {
+                return false;
+            }
+            return Objects.equals(key, entry.key) && Objects.equals(value, entry.value);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hashCode(key) ^ Objects.hashCode(value);
+        }
+
+        @Override
+        public String toString() {
+            return key + "=" + value;
+        }
     }
 
     private class TableIterator implements Iterator<Entry<K, V>> {

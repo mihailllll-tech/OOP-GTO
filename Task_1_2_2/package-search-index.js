@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"ru.nsu.kurumun.hashtable"},{"l":"ru.nsu.kurumun.hashtable.model"}];updateSearchResults();

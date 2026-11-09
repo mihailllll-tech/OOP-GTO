@@ -5,8 +5,30 @@ import java.util.Iterator;
 import ru.nsu.kurumun.hashtable.model.HashTable;
 import ru.nsu.kurumun.hashtable.model.HashTable.Entry;
 
+/**
+ * Демонстрирует операции хеш-таблицы, коллизии и обнаружение изменения при обходе.
+ */
 public class Main {
+    /**
+     * Создаёт объект демонстрационной программы.
+     */
+    public Main() {
+    }
+
+    /**
+     * Запускает примеры работы с таблицами строковых и целочисленных ключей.
+     *
+     * @param args аргументы командной строки; не используются
+     */
     public static void main(String[] args) {
+        demonstrateOperations();
+        demonstrateGrowing();
+    }
+
+    /**
+     * Показывает основные операции и обнаружение изменения при обходе.
+     */
+    static void demonstrateOperations() {
         HashTable<String, Number> table = new HashTable<>();
         table.put("one", 1);
         table.update("one", 1.0);
@@ -48,6 +70,12 @@ public class Main {
             System.out.println("Ошибка обхода: " + exception.getMessage());
         }
 
+    }
+
+    /**
+     * Показывает сохранность записей после расширения и удаления.
+     */
+    static void demonstrateGrowing() {
         HashTable<Integer, Integer> numbers = new HashTable<>();
         for (int number = 0; number < 100; number++) {
             numbers.put(number, number * number);

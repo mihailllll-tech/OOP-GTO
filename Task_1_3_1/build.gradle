@@ -1,10 +1,15 @@
 plugins {
     id 'java'
     id 'application'
+    id 'jacoco'
 }
 
 group = 'ru.nsu.kurumun.substring'
 version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
 
 java {
     toolchain {
@@ -14,4 +19,17 @@ java {
 
 application {
     mainClass = 'ru.nsu.kurumun.substring.Main'
+}
+
+test {
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }

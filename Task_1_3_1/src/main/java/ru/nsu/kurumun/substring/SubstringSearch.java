@@ -25,8 +25,10 @@ public final class SubstringSearch {
             throw new IllegalArgumentException("Искомая строка должна быть непустой");
         }
 
-        int[] pattern = substring.codePoints().toArray();
-        int[] prefix = buildPrefix(pattern);
+        List<Integer> pattern = new ArrayList<>();
+        substring.codePoints().forEachOrdered(pattern::add);
+        List<Integer> prefix = buildPrefix(pattern);
+        int patternLength = pattern.size();
         int matched = 0;
         long position = 0;
 
@@ -35,28 +37,30 @@ public final class SubstringSearch {
             int current;
             while ((current = readCodePoint(reader)) != -1) {
                 matched = advance(pattern, prefix, matched, current);
-                if (matched == pattern.length) {
-                    onMatch.accept(position - pattern.length + 1);
-                    matched = prefix[matched - 1];
+                if (matched == patternLength) {
+                    onMatch.accept(position - patternLength + 1);
+                    matched = prefix.get(matched - 1);
                 }
                 position++;
             }
         }
     }
 
-    private static int[] buildPrefix(int[] pattern) {
-        int[] prefix = new int[pattern.length];
-        for (int i = 1; i < pattern.length; i++) {
-            prefix[i] = advance(pattern, prefix, prefix[i - 1], pattern[i]);
+    private static List<Integer> buildPrefix(List<Integer> pattern) {
+        List<Integer> prefix = new ArrayList<>(pattern.size());
+        prefix.add(0);
+        for (int i = 1; i < pattern.size(); i++) {
+            prefix.add(advance(pattern, prefix, prefix.get(i - 1), pattern.get(i)));
         }
         return prefix;
     }
 
-    private static int advance(int[] pattern, int[] prefix, int matched, int current) {
-        while (matched > 0 && pattern[matched] != current) {
-            matched = prefix[matched - 1];
+    private static int advance(List<Integer> pattern, List<Integer> prefix,
+                               int matched, int current) {
+        while (matched > 0 && pattern.get(matched) != current) {
+            matched = prefix.get(matched - 1);
         }
-        if (pattern[matched] == current) {
+        if (pattern.get(matched) == current) {
             matched++;
         }
         return matched;

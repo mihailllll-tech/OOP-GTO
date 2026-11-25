@@ -9,16 +9,39 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.LongConsumer;
 
+/**
+ * Ищет подстроки в UTF-8-файлах алгоритмом Кнута — Морриса — Пратта.
+ */
 public final class SubstringSearch {
     private SubstringSearch() {
     }
 
+    /**
+     * Собирает позиции всех вхождений, включая перекрывающиеся, в список.
+     *
+     * @param fileName путь к текстовому файлу
+     * @param substring непустая подстрока для поиска с учётом регистра
+     * @return индексы начала вхождений в кодовых точках Unicode, начиная с нуля
+     * @throws IllegalArgumentException если подстрока пуста
+     * @throws IOException если файл не удалось открыть или прочитать
+     */
     public static List<Long> find(String fileName, String substring) throws IOException {
         List<Long> positions = new ArrayList<>();
         find(fileName, substring, positions::add);
         return positions;
     }
 
+    /**
+     * Читает файл порциями и передаёт каждую найденную позицию сразу.
+     * Учитывает перекрывающиеся вхождения.
+     *
+     * @param fileName путь к текстовому файлу
+     * @param substring непустая подстрока для поиска с учётом регистра
+     * @param onMatch действие, получающее индекс начала вхождения в кодовых точках Unicode,
+     *     начиная с нуля
+     * @throws IllegalArgumentException если подстрока пуста
+     * @throws IOException если файл не удалось открыть или прочитать
+     */
     public static void find(String fileName, String substring, LongConsumer onMatch)
             throws IOException {
         if (substring.isEmpty()) {
@@ -46,6 +69,13 @@ public final class SubstringSearch {
         }
     }
 
+    /**
+     * Для каждой начальной части шаблона вычисляет длину её самого длинного
+     * собственного префикса, который совпадает с её суффиксом.
+     *
+     * @param pattern кодовые точки шаблона
+     * @return значения префиксной функции в порядке символов шаблона
+     */
     private static List<Integer> buildPrefix(List<Integer> pattern) {
         List<Integer> prefix = new ArrayList<>(pattern.size());
         prefix.add(0);
@@ -55,6 +85,15 @@ public final class SubstringSearch {
         return prefix;
     }
 
+    /**
+     * Обновляет число совпавших символов после чтения очередной кодовой точки.
+     *
+     * @param pattern кодовые точки шаблона
+     * @param prefix значения префиксной функции
+     * @param matched число символов шаблона, совпавших перед текущим символом
+     * @param current текущая кодовая точка
+     * @return новое число совпавших символов
+     */
     private static int advance(List<Integer> pattern, List<Integer> prefix,
                                int matched, int current) {
         while (matched > 0 && pattern.get(matched) != current) {
@@ -66,6 +105,13 @@ public final class SubstringSearch {
         return matched;
     }
 
+    /**
+     * Читает кодовую точку и при необходимости объединяет суррогатную пару.
+     *
+     * @param reader источник декодированных символов
+     * @return следующая кодовая точка или -1 в конце файла
+     * @throws IOException если при чтении произошла ошибка
+     */
     private static int readCodePoint(BufferedReader reader) throws IOException {
         int first = reader.read();
         if (first != -1 && Character.isHighSurrogate((char) first)) {
